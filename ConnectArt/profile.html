@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - ConnectArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="profile-page">
+  <header>
+    <div class="logo">
+      <img src="Image/Logo.png" alt="ConnectArt Logo" class="logo-img">
+    </div>
+    <div class="header-buttons">
+      <button class="user-btn" id="backBtn">Volver</button>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <div class="profile-container">
+      <!-- Sección de información del perfil -->
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <img src="Image/default-avatar.png" alt="Avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%234a90e2%22/%3E%3Ctext x=%2250%22 y=%2250%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22%3EU%3C/text%3E%3C/svg%3E'">
+        </div>
+        <div class="profile-info">
+          <h1 id="userName">Usuario</h1>
+          <p class="profile-role">Artista Digital</p>
+          <p class="profile-email">usuario@example.com</p>
+        </div>
+      </div>
+
+      <!-- Sección de datos personales -->
+      <section class="profile-section">
+        <h2>Información Personal</h2>
+        <div class="profile-fields">
+          <div class="field">
+            <label>Nombre Completo</label>
+            <input type="text" id="fullName" value="Nombre del Usuario" readonly>
+          </div>
+          <div class="field">
+            <label>Correo Electrónico</label>
+            <input type="email" id="email" value="usuario@example.com" readonly>
+          </div>
+          <div class="field">
+            <label>Teléfono</label>
+            <input type="tel" id="phone" value="+34 123 456 789" readonly>
+          </div>
+          <div class="field">
+            <label>Ubicación</label>
+            <input type="text" id="location" value="Latinoamérica" readonly>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección profesional -->
+      <section class="profile-section">
+        <h2>Información Profesional</h2>
+        <div class="profile-fields">
+          <div class="field">
+            <label>Especialidad</label>
+            <input type="text" id="specialty" value="Ilustración Digital" readonly>
+          </div>
+          <div class="field">
+            <label>Año de Experiencia</label>
+            <input type="number" id="experience" value="5" readonly>
+          </div>
+          <div class="field full-width">
+            <label>Biografía</label>
+            <textarea id="bio" readonly>Soy un artista digital apasionado por crear obras originales y personalizadas. Me especializo en ilustración digital y diseño conceptual.</textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de acciones -->
+      <section class="profile-actions">
+        <button class="btn-edit" id="editBtn">Editar Perfil</button>
+        <button class="btn-save" id="saveBtn" style="display: none;">Guardar Cambios</button>
+        <button class="btn-cancel" id="cancelBtn" style="display: none;">Cancelar</button>
+        <button class="btn-logout">Cerrar sesion</button>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const backBtn = document.getElementById("backBtn");
+    const editBtn = document.getElementById("editBtn");
+    const saveBtn = document.getElementById("saveBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const logoutBtn = document.querySelector(".btn-logout");
+    
+    const fields = document.querySelectorAll(".profile-fields input, .profile-fields textarea");
+
+    backBtn.onclick = () => window.location.href = "index.html";
+
+    editBtn.onclick = () => {
+      fields.forEach(field => field.removeAttribute("readonly"));
+      editBtn.style.display = "none";
+      saveBtn.style.display = "inline-block";
+      cancelBtn.style.display = "inline-block";
+    };
+
+    saveBtn.onclick = () => {
+      fields.forEach(field => field.setAttribute("readonly", "true"));
+      editBtn.style.display = "inline-block";
+      saveBtn.style.display = "none";
+      cancelBtn.style.display = "none";
+      alert("Perfil actualizado correctamente");
+    };
+
+    cancelBtn.onclick = () => {
+      fields.forEach(field => field.setAttribute("readonly", "true"));
+      editBtn.style.display = "inline-block";
+      saveBtn.style.display = "none";
+      cancelBtn.style.display = "none";
+    };
+
+    logoutBtn.onclick = () => {
+      if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        window.location.href = "index.html";
+      }
+    };
+
+    backBtn.onclick = () => {
+      window.location.href = "dashboard.html";
+    };
+  </script>
+</body>
+</html>

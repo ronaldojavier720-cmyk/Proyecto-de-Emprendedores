@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ConnecArt - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard">
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" class="sidebar-item" data-section="notifications" title="Notificaciones"><img src="Image/Notificaciones.png" alt="Notificaciones" class="sidebar-icon"><span>Notificaciones</span></a></li>
+        <li><a href="#" class="sidebar-item" data-section="saved" title="Guardados"><img src="Image/Guardados.png" alt="Guardados" class="sidebar-icon"><span>Guardados</span></a></li>
+        <li><a href="#" class="sidebar-item" data-section="settings" title="Configuración"><img src="Image/image_config.png" alt="Configuración" class="sidebar-icon"><span>Configuración</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-nav">
+      <div class="nav-buttons" id="navButtons">
+          <button class="nav-btn active">Tendencias</button>
+          <button class="nav-btn">Categorías</button>
+          <button class="nav-btn">Comunidades</button>
+        </div>
+      <img src="Image/Logo.png" alt="ConnectArt Logo" class="top-nav-logo">
+      <div class="header-actions">
+        <button class="user-profile-btn" id="userProfileBtn">Mi Perfil</button>
+        <button class="user-portfolio-btn" id="userPortfolioBtn">Mi Portafolio</button>
+      </div>
+    </header>
+
+    <div id="backButtonContainer" style="display: none; margin-bottom: 20px;">
+      <button class="btn-back" id="backBtn">Volver Atras</button>
+    </div>
+
+    <section class="pinterest-grid" id="trendsSection">
+      <div class="pin">
+        <div class="pin-image" style="background-color: #e74c3c; height: 250px;"></div>
+        <div class="pin-content">
+          <h3>Título del Trabajo</h3>
+          <p class="artist">Por @artista_001</p>
+          <div class="pin-footer">
+            <span class="category">Ilustración</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #3498db; height: 320px;"></div>
+        <div class="pin-content">
+          <h3>Diseño Moderno</h3>
+          <p class="artist">Por @diseñador_02</p>
+          <div class="pin-footer">
+            <span class="category">Diseño</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #9b59b6; height: 280px;"></div>
+        <div class="pin-content">
+          <h3>Arte Digital</h3>
+          <p class="artist">Por @artista_003</p>
+          <div class="pin-footer">
+            <span class="category">Digital</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #1abc9c; height: 290px;"></div>
+        <div class="pin-content">
+          <h3>Trabajo en Vivo</h3>
+          <p class="artist">Por @artista_004</p>
+          <div class="pin-footer">
+            <span class="category">Vídeo</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #f39c12; height: 300px;"></div>
+        <div class="pin-content">
+          <h3>Creación Colaborativa</h3>
+          <p class="artist">Por @colectivo_05</p>
+          <div class="pin-footer">
+            <span class="category">Colaboración</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #e67e22; height: 260px;"></div>
+        <div class="pin-content">
+          <h3>Concepto Original</h3>
+          <p class="artist">Por @creador_06</p>
+          <div class="pin-footer">
+            <span class="category">Concepto</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #2ecc71; height: 310px;"></div>
+        <div class="pin-content">
+          <h3>Proyecto Emergente</h3>
+          <p class="artist">Por @nuevo_artista_07</p>
+          <div class="pin-footer">
+            <span class="category">Emergente</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pin">
+        <div class="pin-image" style="background-color: #34495e; height: 270px;"></div>
+        <div class="pin-content">
+          <h3>Obra Minimalista</h3>
+          <p class="artist">Por @minimalista_08</p>
+          <div class="pin-footer">
+            <span class="category">Minimalismo</span>
+            <button class="save-btn">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="content-section" id="categoriesSection" style="display: none;">
+      <h2>Categorías</h2>
+      <div class="categories-filter">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="realistic">Estilo Realista</button>
+        <button class="filter-btn" data-filter="animated">Animado</button>
+        <button class="filter-btn" data-filter="cartoon">Cartoon</button>
+        <button class="filter-btn" data-filter="anime">Anime</button>
+        <button class="filter-btn" data-filter="abstract">Abstracto</button>
+        <button class="filter-btn" data-filter="pixel">Pixel Art</button>
+        <button class="filter-btn" data-filter="watercolor">Acuarela</button>
+      </div>
+      <div class="pinterest-grid" id="categoriesGrid">
+        <div class="pin" data-category="realistic">
+          <div class="pin-image" style="background-color: #e74c3c; height: 250px;"></div>
+          <div class="pin-content">
+            <h3>Retrato Realista</h3>
+            <p class="artist">Por @artista_realista</p>
+            <div class="pin-footer">
+              <span class="category">Estilo Realista</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="animated">
+          <div class="pin-image" style="background-color: #3498db; height: 320px;"></div>
+          <div class="pin-content">
+            <h3>Animación 3D</h3>
+            <p class="artist">Por @animador_pro</p>
+            <div class="pin-footer">
+              <span class="category">Animado</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="cartoon">
+          <div class="pin-image" style="background-color: #f39c12; height: 280px;"></div>
+          <div class="pin-content">
+            <h3>Personaje Cartoon</h3>
+            <p class="artist">Por @cartoonista</p>
+            <div class="pin-footer">
+              <span class="category">Cartoon</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="anime">
+          <div class="pin-image" style="background-color: #9b59b6; height: 290px;"></div>
+          <div class="pin-content">
+            <h3>Arte Anime</h3>
+            <p class="artist">Por @artista_anime</p>
+            <div class="pin-footer">
+              <span class="category">Anime</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="abstract">
+          <div class="pin-image" style="background-color: #1abc9c; height: 270px;"></div>
+          <div class="pin-content">
+            <h3>Composición Abstracta</h3>
+            <p class="artist">Por @artista_abstracto</p>
+            <div class="pin-footer">
+              <span class="category">Abstracto</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="pixel">
+          <div class="pin-image" style="background-color: #2ecc71; height: 300px;"></div>
+          <div class="pin-content">
+            <h3>Pixel Art Game</h3>
+            <p class="artist">Por @pixel_master</p>
+            <div class="pin-footer">
+              <span class="category">Pixel Art</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="watercolor">
+          <div class="pin-image" style="background-color: #e67e22; height: 260px;"></div>
+          <div class="pin-content">
+            <h3>Paisaje Acuarela</h3>
+            <p class="artist">Por @acuarelista</p>
+            <div class="pin-footer">
+              <span class="category">Acuarela</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pin" data-category="realistic">
+          <div class="pin-image" style="background-color: #34495e; height: 280px;"></div>
+          <div class="pin-content">
+            <h3>Escultura Digital</h3>
+            <p class="artist">Por @escultor_digital</p>
+            <div class="pin-footer">
+              <span class="category">Estilo Realista</span>
+              <button class="save-btn">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comunidades -->
+    <section class="content-section" id="communitiesSection" style="display: none;">
+      <h2>Comunidades</h2>
+      <div class="communities-list">
+        <div class="community-card">
+          <div class="community-header">
+            <div class="community-avatar" style="background-color: #e74c3c;"></div>
+            <div class="community-info">
+              <h3>Artistas Digitales Latinoamericanos</h3>
+              <p class="community-description">Una comunidad dedicada a promover el arte digital en Latinoamérica</p>
+              <div class="community-stats">
+                <span>15.2K miembros</span>
+                <span>234 publicaciones</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <button class="btn-join">Unirse</button>
+            <button class="btn-info">Ver más</button>
+          </div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-header">
+            <div class="community-avatar" style="background-color: #3498db;"></div>
+            <div class="community-info">
+              <h3>Ilustradores Profesionales</h3>
+              <p class="community-description">Espacio para compartir técnicas y consejos de ilustración profesional</p>
+              <div class="community-stats">
+                <span>8.9K miembros</span>
+                <span>567 publicaciones</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <button class="btn-join">Unirse</button>
+            <button class="btn-info">Ver más</button>
+          </div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-header">
+            <div class="community-avatar" style="background-color: #9b59b6;"></div>
+            <div class="community-info">
+              <h3>Diseñadores UI/UX</h3>
+              <p class="community-description">Comparte tus proyectos de diseño de interfaces y experiencia de usuario</p>
+              <div class="community-stats">
+                <span>12.5K miembros</span>
+                <span>890 publicaciones</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <button class="btn-join">Unirse</button>
+            <button class="btn-info">Ver más</button>
+          </div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-header">
+            <div class="community-avatar" style="background-color: #1abc9c;"></div>
+            <div class="community-info">
+              <h3>Animadores 3D</h3>
+              <p class="community-description">Comunidad enfocada en animación 3D, modeling y efectos visuales</p>
+              <div class="community-stats">
+                <span>5.6K miembros</span>
+                <span>345 publicaciones</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <button class="btn-join">Unirse</button>
+            <button class="btn-info">Ver más</button>
+          </div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-header">
+            <div class="community-avatar" style="background-color: #f39c12;"></div>
+            <div class="community-info">
+              <h3>Artistas de Conceptos</h3>
+              <p class="community-description">Desarrollo de conceptos visuales para videojuegos, películas y más</p>
+              <div class="community-stats">
+                <span>7.3K miembros</span>
+                <span>456 publicaciones</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <button class="btn-join">Unirse</button>
+            <button class="btn-info">Ver más</button>
+          </div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-header">
+            <div class="community-avatar" style="background-color: #2ecc71;"></div>
+            <div class="community-info">
+              <h3>Pixel Art y Retro Gaming</h3>
+              <p class="community-description">Para amantes del pixel art y la estética retro en videojuegos</p>
+              <div class="community-stats">
+                <span>9.1K miembros</span>
+                <span>623 publicaciones</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <button class="btn-join">Unirse</button>
+            <button class="btn-info">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notificaciones -->
+    <section class="content-section" id="notificationsSection" style="display: none;">
+      <h2>Notificaciones</h2>
+      <div class="notifications-list">
+        <div class="notification-item">
+          <div class="notification-content">
+            <h4>Nuevo comentario en tu obra</h4>
+            <p>@artista_002 comentó en tu trabajo "Concepto Original"</p>
+            <span class="notification-time">Hace 2 horas</span>
+          </div>
+          <button class="delete-notification">Eliminar</button>
+        </div>
+        <div class="notification-item">
+          <div class="notification-content">
+            <h4>Alguien guardó tu obra</h4>
+            <p>Tu trabajo fue guardado por 5 usuarios</p>
+            <span class="notification-time">Hace 4 horas</span>
+          </div>
+          <button class="delete-notification">Eliminar</button>
+        </div>
+        <div class="notification-item">
+          <div class="notification-content">
+            <h4>Nueva comunidad sugerida</h4>
+            <p>Te recomendamos unirte a "Artistas Digitales Latinoamericanos"</p>
+            <span class="notification-time">Hace 1 día</span>
+          </div>
+          <button class="delete-notification">Eliminar</button>
+        </div>
+        <div class="notification-item">
+          <div class="notification-content">
+            <h4>Tu obra fue destacada</h4>
+            <p>"Diseño Moderno" aparece en las tendencias</p>
+            <span class="notification-time">Hace 2 días</span>
+          </div>
+          <button class="delete-notification">Eliminar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guardados -->
+    <section class="content-section" id="savedSection" style="display: none;">
+      <h2>Obras Guardadas</h2>
+      <div class="pinterest-grid">
+        <div class="pin">
+          <div class="pin-image" style="background-color: #3498db; height: 250px;"></div>
+          <div class="pin-content">
+            <h3>Diseño Minimalista</h3>
+            <p class="artist">Por @diseñador_pro</p>
+            <div class="pin-footer">
+              <span class="category">Diseño</span>
+              <button class="remove-btn">Remover</button>
+            </div>
+          </div>
+        </div>
+        <div class="pin">
+          <div class="pin-image" style="background-color: #9b59b6; height: 280px;"></div>
+          <div class="pin-content">
+            <h3>Ilustración Fantástica</h3>
+            <p class="artist">Por @ilustrador_exp</p>
+            <div class="pin-footer">
+              <span class="category">Ilustración</span>
+              <button class="remove-btn">Remover</button>
+            </div>
+          </div>
+        </div>
+        <div class="pin">
+          <div class="pin-image" style="background-color: #1abc9c; height: 290px;"></div>
+          <div class="pin-content">
+            <h3>Arte Conceptual</h3>
+            <p class="artist">Por @artista_concept</p>
+            <div class="pin-footer">
+              <span class="category">Concepto</span>
+              <button class="remove-btn">Remover</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Configuración -->
+    <section class="content-section" id="settingsSection" style="display: none;">
+      <h2>Configuración</h2>
+      <div class="settings-container">
+        <div class="settings-group">
+          <h3>Preferencias de Privacidad</h3>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" checked> Mostrar mi perfil en búsquedas
+            </label>
+          </div>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" checked> Permitir comentarios en mis obras
+            </label>
+          </div>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox"> Recibir notificaciones por email
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3>Preferencias de Contenido</h3>
+          <div class="setting-item">
+            <label>Categorías de Interés:</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" checked> Ilustración</label>
+              <label><input type="checkbox" checked> Diseño</label>
+              <label><input type="checkbox"> Fotografía</label>
+              <label><input type="checkbox" checked> Digital</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3>Cuenta</h3>
+          <div class="setting-item">
+            <button class="btn-settings">Cambiar Contraseña</button>
+            <button class="btn-settings">Descargar mis Datos</button>
+            <button class="btn-settings btn-danger">Eliminar Cuenta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <!-- Modal de Comisión -->
+  <div id="commissionModal" class="commission-modal" style="display:none;">
+    <div class="commission-modal-content">
+      <span class="commission-close">&times;</span>
+      <h3>Contactar para Comisión</h3>
+      <p class="commission-artist-name"></p>
+      <form id="commissionForm">
+        <label>Tu Nombre</label>
+        <input type="text" id="reqName" required>
+
+        <label>Correo Electrónico</label>
+        <input type="email" id="reqEmail" required>
+
+        <label>Teléfono</label>
+        <input type="tel" id="reqPhone">
+
+        <label>Método de Pago</label>
+        <select id="reqPayment">
+          <option value="paypal">PayPal</option>
+          <option value="stripe">Tarjeta de credito</option>
+          <option value="transfer">Tarjeta de debito</option>
+          <option value="transfer">Mercado Pago</option>
+        </select>
+
+        <label>Detalle de la Comisión</label>
+        <textarea id="reqDetails" rows="4" required></textarea>
+
+        <div class="commission-actions">
+          <button type="submit" class="btn-submit-commission">Enviar Solicitud</button>
+          <button type="button" class="btn-cancel-commission">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

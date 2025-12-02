@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio - ConnectArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="portfolio-page">
+  <header>
+    <div class="logo">
+      <img src="Image/Logo.png" alt="ConnectArt Logo" class="logo-img">
+    </div>
+    <div class="header-buttons">
+      <button class="user-btn" id="backBtn">Volver</button>
+    </div>
+  </header>
+
+  <main class="portfolio-main">
+    <div class="portfolio-container">
+      <!-- Preview del Perfil -->
+      <section class="portfolio-preview">
+        <div class="preview-header-section">
+          <h2>Previsualización de Perfil</h2>
+          <button class="btn-preview-toggle" id="btnTogglePreview">Ver Portafolio Público</button>
+        </div>
+        <div class="profile-preview-card" id="previewCard">
+          <button class="btn-change-avatar" id="btnChangeAvatar">Personalizar</button>
+          <div class="preview-header">
+            <div class="preview-avatar" id="previewAvatar" style="background-color: #667eea;"></div>
+            <div class="preview-info">
+              <h3>Artista@1</h3>
+              <p class="preview-role">Artista Digital</p>
+              <span class="premium-badge">Premium</span>
+            </div>
+          </div>
+          <p class="preview-description">Tu descripción aparecerá aquí. Máximo 150 caracteres.</p>
+          <div class="preview-stats">
+            <div class="stat">
+              <span class="stat-number">12</span>
+              <span class="stat-label">Obras</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">456</span>
+              <span class="stat-label">Seguidores</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">89</span>
+              <span class="stat-label">Comunidades</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editor de Perfil -->
+      <section class="portfolio-editor">
+        <h2>Editar Perfil Público</h2>
+        <div class="editor-form">
+          <div class="form-group">
+            <label>Nombre de Artista</label>
+            <input type="text" id="artistName" value="Artista@1" maxlength="50">
+          </div>
+
+          <div class="form-group">
+            <label>Rol/Especialidad</label>
+            <input type="text" id="artistRole" value="Artista Digital" maxlength="30">
+          </div>
+
+          <div class="form-group">
+            <label>Descripción Pública</label>
+            <textarea id="artistDescription" maxlength="150" rows="3">Tu descripción aparecerá aquí. Máximo 150 caracteres.</textarea>
+            <small id="charCount">0/150</small>
+          </div>
+
+          <div class="form-group">
+            <label>Estado de Suscripción</label>
+            <select id="premiumStatus">
+              <option value="free">Gratuito</option>
+              <option value="premium">Premium</option>
+              <option value="pro">Pro</option>
+            </select>
+          </div>
+
+          <button class="btn-save-profile">Guardar Perfil</button>
+        </div>
+      </section>
+
+      <!-- Previsualización Portafolio Público -->
+      <section class="portfolio-public-preview" id="publicPreviewSection" style="display: none;">
+        <div class="public-preview-header">
+          <button class="btn-back-preview" id="btnBackPreview">Volver al Editor</button>
+          <h2>Cómo ven otros tu Portafolio</h2>
+        </div>
+
+        <div class="public-profile-card">
+          <div class="public-preview-header">
+            <div class="public-preview-avatar" id="publicPreviewAvatar"></div>
+            <div class="public-preview-info">
+              <h3 id="publicPreviewName">Artista@1</h3>
+              <p id="publicPreviewRole">Artista Digital</p>
+              <span class="public-premium-badge" id="publicPremiumBadge">Premium</span>
+            </div>
+          </div>
+          <p class="public-preview-description" id="publicPreviewDescription">Tu descripción aparecerá aquí.</p>
+          <div class="public-preview-stats">
+            <div class="stat">
+              <span class="stat-number" id="publicWorksCount">0</span>
+              <span class="stat-label">Obras</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">456</span>
+              <span class="stat-label">Seguidores</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">89</span>
+              <span class="stat-label">Comunidades</span>
+            </div>
+          </div>
+          <button class="btn-follow">Seguir</button>
+        </div>
+
+        <div class="public-portfolio-section">
+          <h3>Portafolio</h3>
+          <div class="public-portfolio-grid" id="publicPortfolioGrid">
+            <!-- Las obras se cargarán aquí -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Gestor de Portafolio -->
+      <section class="portfolio-manager" id="portfolioManagerSection">
+        <h2>Tu Portafolio</h2>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-color: #e74c3c;"></div>
+            <div class="portfolio-item-info">
+              <h4>Título del Trabajo</h4>
+              <p>Ilustración</p>
+              <div class="portfolio-item-actions">
+                <button class="btn-edit-item">Editar</button>
+                <button class="btn-delete-item">Eliminar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-color: #3498db;"></div>
+            <div class="portfolio-item-info">
+              <h4>Diseño Moderno</h4>
+              <p>Diseño</p>
+              <div class="portfolio-item-actions">
+                <button class="btn-edit-item">Editar</button>
+                <button class="btn-delete-item">Eliminar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-color: #9b59b6;"></div>
+            <div class="portfolio-item-info">
+              <h4>Arte Digital</h4>
+              <p>Digital</p>
+              <div class="portfolio-item-actions">
+                <button class="btn-edit-item">Editar</button>
+                <button class="btn-delete-item">Eliminar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-color: #1abc9c;"></div>
+            <div class="portfolio-item-info">
+              <h4>Trabajo en Vivo</h4>
+              <p>Vídeo</p>
+              <div class="portfolio-item-actions">
+                <button class="btn-edit-item">Editar</button>
+                <button class="btn-delete-item">Eliminar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item add-item">
+            <button class="btn-add-work">+ Agregar Obra</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal para Cambiar Avatar -->
+      <div class="modal" id="changeAvatarModal">
+        <div class="modal-content portfolio-modal">
+          <span class="close-modal" id="closeAvatarModal">&times;</span>
+          <h2>Personalizar Perfil</h2>
+          
+          <div class="customize-section">
+            <h3>Color del Avatar</h3>
+            <div class="avatar-colors">
+              <div class="color-option avatar-option" data-color="#667eea" style="background-color: #667eea;"></div>
+              <div class="color-option avatar-option" data-color="#ff6b6b" style="background-color: #ff6b6b;"></div>
+              <div class="color-option avatar-option" data-color="#4ecdc4" style="background-color: #4ecdc4;"></div>
+              <div class="color-option avatar-option" data-color="#f39c12" style="background-color: #f39c12;"></div>
+              <div class="color-option avatar-option" data-color="#9b59b6" style="background-color: #9b59b6;"></div>
+              <div class="color-option avatar-option" data-color="#e74c3c" style="background-color: #e74c3c;"></div>
+              <div class="color-option avatar-option" data-color="#1abc9c" style="background-color: #1abc9c;"></div>
+              <div class="color-option avatar-option" data-color="#34495e" style="background-color: #34495e;"></div>
+            </div>
+          </div>
+
+          <div class="customize-section">
+            <h3>Color de Fondo del Perfil</h3>
+            <div class="background-colors">
+              <div class="color-option bg-option" data-color="#221D2B" style="background-color: #221D2B;"></div>
+              <div class="color-option bg-option" data-color="#1a3a52" style="background-color: #1a3a52;"></div>
+              <div class="color-option bg-option" data-color="#2c3e50" style="background-color: #2c3e50;"></div>
+              <div class="color-option bg-option" data-color="#34495e" style="background-color: #34495e;"></div>
+              <div class="color-option bg-option" data-color="#1a1a2e" style="background-color: #1a1a2e;"></div>
+              <div class="color-option bg-option" data-color="#16213e" style="background-color: #16213e;"></div>
+              <div class="color-option bg-option" data-color="#0f3460" style="background-color: #0f3460;"></div>
+              <div class="color-option bg-option" data-color="#2d4059" style="background-color: #2d4059;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para Editar Obra -->
+      <div class="modal" id="editWorkModal">
+        <div class="modal-content portfolio-modal">
+          <span class="close-modal">&times;</span>
+          <h2>Editar Obra</h2>
+          <div class="modal-form">
+            <div class="form-group">
+              <label>Título de la Obra</label>
+              <input type="text" id="workTitle" placeholder="Nombre de tu obra">
+            </div>
+            <div class="form-group">
+              <label>Descripción</label>
+              <textarea id="workDescription" placeholder="Descripción de tu obra" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Categoría</label>
+              <select id="workCategory">
+                <option>Ilustración</option>
+                <option>Diseño</option>
+                <option>Digital</option>
+                <option>Vídeo</option>
+                <option>Fotografía</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Imagen (URL)</label>
+              <input type="text" id="workImage" placeholder="https://ejemplo.com/imagen.jpg">
+            </div>
+            <div class="modal-actions">
+              <button class="btn-modal-save">Guardar</button>
+              <button class="btn-modal-cancel">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>ConnectArt</h4>
+        <p>Plataforma de arte y creatividad</p>
+      </div>
+      <div class="footer-section">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Comunidad</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Términos de Servicio</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ConnectArt. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Menú contextual -->
+  <div class="context-menu" id="contextMenu">
+    <button class="context-menu-item" id="loginOption">Entrar</button>
+    <button class="context-menu-item" id="logoutOption">Cerrar Sesión</button>
+  </div>
+
+  <script src="portfolio-script.js"></script>
+
+  <!-- Modal de Comisión -->
+  <div id="commissionModal" class="commission-modal" style="display:none;">
+    <div class="commission-modal-content">
+      <span class="commission-close">&times;</span>
+      <h3>Contactar para Comisión</h3>
+      <p class="commission-artist-name"></p>
+      <form id="commissionForm">
+        <label>Tu Nombre</label>
+        <input type="text" id="reqName" required>
+
+        <label>Correo Electrónico</label>
+        <input type="email" id="reqEmail" required>
+
+        <label>Teléfono</label>
+        <input type="tel" id="reqPhone">
+
+        <label>Método de Pago</label>
+        <select id="reqPayment">
+          <option value="paypal">PayPal</option>
+          <option value="stripe">Tarjeta (Stripe)</option>
+          <option value="transfer">Transferencia</option>
+        </select>
+
+        <label>Detalle de la Comisión</label>
+        <textarea id="reqDetails" rows="4" required></textarea>
+
+        <div class="commission-actions">
+          <button type="submit" class="btn-submit-commission">Enviar Solicitud</button>
+          <button type="button" class="btn-cancel-commission">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

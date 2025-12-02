@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnecArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Image/Logo.png" alt="ConnectArt Logo" class="logo-img">
+    </div>
+    <div class="header-buttons">
+      <button class="login-btn">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="vision">
+      <h2>Nuestra visión</h2>
+      <p>Convertirnos en el marketplace líder de arte digital en Latinoamérica, reconocido por impulsar la visibilidad y profesionalización de artistas emergentes, creando una comunidad creativa global que valore la originalidad, la colaboración y la innovación.</p>
+    </section>
+
+    <section class="mision">
+      <h2>Nuestra misión</h2>
+      <p>Impulsar el talento de los artistas digitales mediante una plataforma segura, accesible y confiable que les permita exhibir, vender y promover sus obras, conectando directamente con compradores y admiradores del arte, mientras fomentamos un entorno colaborativo que fortalezca la creatividad y el crecimiento profesional.</p>
+    </section>
+
+    <section class="objetivos">
+      <h2>Objetivos</h2>
+      <p>Desarrollar y consolidar una plataforma digital que facilite la promoción, venta y conexión directa entre artistas digitales emergentes y compradores interesados en adquirir arte original o personalizado, garantizando seguridad, visibilidad y profesionalización en cada interacción.</p>
+    </section>
+
+
+
+      <!-- Modal de inicio de sesión -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form action="dashboard.html" method="get">
+      <label for="username">Nombre de usuario</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+
+      <div class="links">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="#">¿No tienes Cuenta? <strong>Crea una aquí</strong></a>
+      </div>
+
+      <button type="submit" class="submit-btn">Siguiente</button>
+      </form>
+    </div>  
+  </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>ConnectArt</h4>
+        <p>Plataforma de arte y creatividad</p>
+      </div>
+      <div class="footer-section">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Comunidad</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Términos de Servicio</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ConnectArt. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+  const modal = document.getElementById("loginModal");
+  const btn = document.querySelector(".login-btn");
+  const span = document.querySelector(".close");
+
+  btn.onclick = () => modal.style.display = "block";
+  span.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
+</body>
+</html>
